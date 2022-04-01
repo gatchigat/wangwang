@@ -42,6 +42,10 @@
             display: none;
         }
 
+        .sticky {
+            display: sticky;
+        }
+
         body {
             min-height: 100vh;
             font-family: "Roboto", serif;
@@ -109,11 +113,51 @@
             justify-content: center;
             flex-direction: column;
         }
+
+        @media only screen and (max-width: 600px) {
+            main {
+                font-size: 16px;
+                min-height: 80vh;
+                padding: 10px 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .box1,
+            .box2,
+            .box3 {
+                border: 5px solid #287e8d;
+                border-radius: 10px;
+                padding: 5px 10px;
+                padding-left: 20px;
+                width: 300px;
+                margin-bottom: 20px;
+            }
+
+            .course,
+            .average-text,
+            .label {
+                display: inline-block;
+                width: 90px;
+            }
+
+            #rick img {
+                height: 650px;
+                width: 350px;
+            }
+
+            video {
+                height: 700px;
+                width: 350px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <header></header>
+    <header class="sticky"></header>
 
     <main>
         <!-- *Display your firstname, create a button to change your name to Full Name -->
@@ -174,7 +218,7 @@
         </div>
     </div>
 
-    <footer></footer>
+    <footer class="sticky"></footer>
     <script>
         // ON LOAD
         document.getElementById('name').style.fontSize = '45px';
