@@ -46,9 +46,20 @@
             display: sticky;
         }
 
+        .fixed {
+            /* position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%; */
+        }
+
         body {
             min-height: 100vh;
             font-family: "Roboto", serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
         }
 
         header,
@@ -63,9 +74,11 @@
             min-height: 80vh;
             padding: 10px 10px;
             display: flex;
+            flex: 1;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            margin-bottom: -50px;
         }
 
         .course,
@@ -107,11 +120,16 @@
         }
 
         .wrapper {
+
             padding: 1% 15%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+        }
+
+        .wrapper:nth-of-type(1) {
+            margin-top: 50px;
         }
 
         @media only screen and (max-width: 600px) {
@@ -123,6 +141,7 @@
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
+
             }
 
             .box1,
@@ -149,16 +168,9 @@
             }
 
             video {
-                height: 700px;
+                height: 600px;
                 width: 350px;
             }
-        }
-        .wrapper {
-            padding: 3% 15%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
         }
     </style>
 </head>
@@ -225,7 +237,7 @@
         </div>
     </div>
 
-    <footer class="sticky"></footer>
+    <footer class="fixed"></footer>
     <script>
         // ON LOAD
         document.getElementById('name').style.fontSize = '45px';
@@ -328,6 +340,7 @@
             document.getElementsByTagName('button')[7].style.display = 'block';
             document.getElementsByTagName('button')[8].style.display = 'block';
             document.getElementById('rick').style.display = 'block';
+            document.getElementsByClassName('wrapper')[0].style.marginTop = '5px';
         }
         function getWild() {
             var vid = document.getElementById("myVideo");
@@ -340,6 +353,9 @@
             document.getElementsByTagName('button')[9].style.display = 'block';
             document.getElementById('wild').style.display = 'block';
             document.getElementsByTagName('video')[0].volume = 0.2;
+            document.getElementsByTagName('button')[9].style.marginBottom = '50px';
+            document.getElementsByClassName('wrapper')[1].style.marginTop = '0';
+            document.getElementsByClassName('wrapper')[0].style.paddingTop = '5px';
         }
     </script>
 </body>
